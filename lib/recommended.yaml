@@ -16,7 +16,8 @@ analyzer:
     # Allow explicit types (strong typing preference - we want verbose types)
     omit_local_variable_types: ignore
 
-    # Allow long lines (120 char limit enforced by formatter, not analyzer)
+    # Allow long lines (120 char limit enforced by formatter with --line-length=120, not analyzer)
+    # The analyzer rule checks for 80 chars, but we use 120 chars in our formatter
     lines_longer_than_80_chars: ignore
 
     # Allow dynamic calls (needed for some runtime code)
