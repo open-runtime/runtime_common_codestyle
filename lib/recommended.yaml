@@ -1,6 +1,9 @@
 include: package:lint_hard/all.yaml
 
 analyzer:
+  plugins:
+    - custom_lint
+
   language:
     # Strong typing - enforce explicit types
     # These help catch type safety issues
@@ -34,6 +37,15 @@ analyzer:
 
     # Allow print statements everywhere
     avoid_print: ignore
+
+    # Allow type annotations on closure parameters (strong typing preference)
+    avoid_types_on_closure_parameters: ignore
+
+    # Allow camel_case type names (common in FFI for C types like mode_t)
+    camel_case_types: ignore
+
+    # Allow comment references that may not be visible in scope (documentation purposes)
+    comment_references: ignore
 
     # Allow throw statements wrapped in parentheses (used as expressions in logical operations)
     # Example: value ?? (throw Exception('message'));
@@ -109,6 +121,10 @@ linter:
     # Allow dependencies to not be sorted alphabetically in pubspec.yaml
     # We organize dependencies by category (direct, git, local) rather than alphabetically
     sort_pub_dependencies: false
+
+    # Allow classes with only static members (common in FFI and utility classes)
+    # Example: class MODE_T_PERMISSIONS { static int x = 1; ... }
+    avoid_classes_with_only_static_members: false
 
     # All other rules from lint_hard/all.yaml are included above
 
