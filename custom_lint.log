@@ -1,0 +1,98 @@
+[custom_lint] 2025-12-02T20:31:25.545970 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:31:25.545970     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:31:25.545970                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:31:25.545970
+[custom_lint] 2025-12-02T20:31:25.545970
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:32:24.677156 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:32:24.677156     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:32:24.677156                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:32:24.677156
+[custom_lint] 2025-12-02T20:32:24.677156
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:32:52.736185 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:32:52.736185     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:32:52.736185                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:32:52.736185
+[custom_lint] 2025-12-02T20:32:52.736185
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:33:13.786617 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:33:13.786617     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:33:13.786617                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:33:13.786617
+[custom_lint] 2025-12-02T20:33:13.786617
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:33:32.025604 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:33:32.025604     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:33:32.025604                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:33:32.025604
+[custom_lint] 2025-12-02T20:33:32.025604
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:34:10.169795 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:34:10.169795     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:34:10.169795                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:34:10.169795
+[custom_lint] 2025-12-02T20:34:10.169795
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+
+[custom_lint] 2025-12-02T20:34:24.547498 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:34:24.547498     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:34:24.547498                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:34:24.547498
+[custom_lint] 2025-12-02T20:34:24.547498
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
+RequestErrorCode.PLUGIN_ERROR
+Bad state: Failed to start the plugins.
+at:
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
+<asynchronous suspension>
+#1      Future.any.onValue (dart:async/future.dart:637)
+<asynchronous suspension>
+

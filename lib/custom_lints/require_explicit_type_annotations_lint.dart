@@ -1,5 +1,6 @@
-import 'package:analyzer/error/listener.dart';
-import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:analyzer/error/listener.dart' show DiagnosticReporter;
+import 'package:custom_lint_builder/custom_lint_builder.dart'
+    show CustomLintContext, CustomLintResolver, DartLintRule, LintCode;
 
 /// Custom lint rule that requires explicit type annotations instead of 'var'
 ///
