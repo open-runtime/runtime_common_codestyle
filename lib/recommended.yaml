@@ -86,5 +86,9 @@ linter:
     # Example: (throw Exception('message'));
     unnecessary_parenthesis: false
 
+    # Allow dependencies to not be sorted alphabetically in pubspec.yaml
+    # We organize dependencies by category (direct, git, local) rather than alphabetically
+    sort_pub_dependencies: false
+
     # All other rules from lint_hard/all.yaml are included above
 
