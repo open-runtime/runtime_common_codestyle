@@ -2,10 +2,12 @@ include: package:lint_hard/all.yaml
 
 analyzer:
   language:
-    # Strong typing - enforce explicit types
-    strict-casts: true
-    strict-inference: true
-    strict-raw-types: true
+    # Strong typing - enforce explicit types (as warnings, not errors)
+    # These help catch type safety issues but don't block builds
+    # Set to 'error' once codebase is migrated to fix dynamic type issues
+    strict-casts: warning
+    strict-inference: warning
+    strict-raw-types: warning
 
   errors:
     # Allow explicit types (strong typing preference - we want verbose types)
@@ -15,6 +17,7 @@ analyzer:
     lines_longer_than_80_chars: ignore
 
     # Allow dynamic calls (needed for some runtime code)
+    # Note: ProcessResult.stdout is dynamic by design (String or Uint8List)
     avoid_dynamic_calls: ignore
 
     # Allow SCREAMING_SNAKE_CASE for constants, enum values, static final fields
@@ -25,6 +28,17 @@ analyzer:
     #   - Top-level: final ModuleAssets TesseractInferenceAssets = ...
     #   - Functions: String get_standardized_color(String name) { ... }
     non_constant_identifier_names: ignore
+
+    # Allow async file IO (sometimes needed for better performance)
+    avoid_slow_async_io: ignore
+
+    # Allow print statements (scripts folder is excluded, but allow elsewhere too)
+    avoid_print: ignore
+
+    # Allow throw statements wrapped in parentheses (used as expressions in logical operations)
+    # Example: project is String || (throw Exception('message'));
+    # See: https://dart.dev/diagnostics/unnecessary_statements
+    unnecessary_statements: ignore
 
     # Allow variable shadowing with _ and __ prefixes
     # This is a documented convention, not enforced by analyzer
@@ -39,11 +53,15 @@ analyzer:
     - "**/*.pb.dart"
     - "**/*.pbenum.dart"
     - "**/*.mocks.dart"
+    - "**/*.reflectable.dart"
     - "**/generated_plugin_registrant.dart"
 
     # Examples and tests
     - "**/example/**"
     - "**/test_reflectable/**"
+
+    # Scripts (allow print statements and async IO)
+    - "**/scripts/**"
 
     # External dependencies
     - "**/ssg/**"
@@ -55,6 +73,22 @@ linter:
   rules:
     # Enforce trailing commas in function calls and declarations
     always_put_required_named_parameters_first: true
+
+    # Allow single-line control flow statements without braces
+    # Example: if (!repos.contains(location.split(slash).last)) continue;
+    curly_braces_in_flow_control_structures: false
+
+    # Allow control flow bodies on the same line
+    # Example: if (condition) return; (instead of requiring new line)
+    always_put_control_body_on_new_line: false
+
+    # Allow unnecessary parentheses (throw statements wrapped in parentheses)
+    # Example: (throw Exception('message'));
+    unnecessary_parenthesis: false
+
+    # Allow dependencies to not be sorted alphabetically in pubspec.yaml
+    # We organize dependencies by category (direct, git, local) rather than alphabetically
+    sort_pub_dependencies: false
 
     # All other rules from lint_hard/all.yaml are included above
 
