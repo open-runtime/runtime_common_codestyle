@@ -2,12 +2,12 @@ include: package:lint_hard/all.yaml
 
 analyzer:
   language:
-    # Strong typing - enforce explicit types (as warnings, not errors)
-    # These help catch type safety issues but don't block builds
-    # Set to 'error' once codebase is migrated to fix dynamic type issues
-    strict-casts: warning
-    strict-inference: warning
-    strict-raw-types: warning
+    # Strong typing - enforce explicit types
+    # These help catch type safety issues
+    # Severity is configured as warnings in analyzer.errors section below
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
 
   errors:
     # Allow explicit types (strong typing preference - we want verbose types)
@@ -32,13 +32,19 @@ analyzer:
     # Allow async file IO (sometimes needed for better performance)
     avoid_slow_async_io: ignore
 
-    # Allow print statements (scripts folder is excluded, but allow elsewhere too)
+    # Allow print statements everywhere
     avoid_print: ignore
 
     # Allow throw statements wrapped in parentheses (used as expressions in logical operations)
-    # Example: project is String || (throw Exception('message'));
+    # Example: value ?? (throw Exception('message'));
     # See: https://dart.dev/diagnostics/unnecessary_statements
     unnecessary_statements: ignore
+
+    # Configure strict typing rules as warnings (not errors) to avoid blocking builds
+    # These will show as warnings but won't fail the build
+    strict-casts: warning
+    strict-inference: warning
+    strict-raw-types: warning
 
     # Allow variable shadowing with _ and __ prefixes
     # This is a documented convention, not enforced by analyzer
@@ -60,7 +66,7 @@ analyzer:
     - "**/example/**"
     - "**/test_reflectable/**"
 
-    # Scripts (allow print statements and async IO)
+    # Scripts folder (excluded from analysis)
     - "**/scripts/**"
 
     # External dependencies
@@ -71,7 +77,8 @@ analyzer:
 
 linter:
   rules:
-    # Enforce trailing commas in function calls and declarations
+    # Enforce required named parameters to be positioned before optional named parameters
+    # in function and method declarations
     always_put_required_named_parameters_first: true
 
     # Allow single-line control flow statements without braces
