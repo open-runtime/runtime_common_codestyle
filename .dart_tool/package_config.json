@@ -141,9 +141,9 @@
     },
     {
       "name": "lint_hard",
-      "rootUri": "file:///Users/tsavoknott/.pub-cache/hosted/pub.dev/lint_hard-4.0.0",
+      "rootUri": "file:///Users/tsavoknott/.pub-cache/hosted/pub.dev/lint_hard-6.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.7"
     },
     {
       "name": "logging",
