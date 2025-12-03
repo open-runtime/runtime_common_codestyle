@@ -89,6 +89,8 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.pb.dart"
     - "**/*.pbenum.dart"
+    - "**/*.pbgrpc.dart"
+    - "**/*.pbjson.dart"
     - "**/*.mocks.dart"
     - "**/*.reflectable.dart"
     - "**/generated_plugin_registrant.dart"

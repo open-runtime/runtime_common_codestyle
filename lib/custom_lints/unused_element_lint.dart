@@ -32,5 +32,3 @@ class UnusedElementLint extends DartLintRule {
     // built-in analyzer diagnostic handles the actual detection and reporting.
   }
 }
-
-
