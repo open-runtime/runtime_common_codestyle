@@ -6,8 +6,13 @@ repository: https://github.com/open-runtime/aot_monorepo
 environment:
   sdk: ^3.9.0
 dependencies:
-  lint_hard: ^6.0.0
+  # ==========================================================================
+  #
+  # Direct pub.dev dependencies
+  #
+  # ==========================================================================
   analyzer: ^8.0.0
+  lint_hard: ^6.0.0
 
 dev_dependencies:
   custom_lint: ^0.8.1
