@@ -1,0 +1,20 @@
+# Dart/Flutter build artifacts
+.dart_tool/
+build/
+
+# Dependency lock files
+pubspec.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Custom lint logs
+custom_lint.log
+
+# OS files
+.DS_Store
+Thumbs.db
