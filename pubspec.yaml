@@ -3,13 +3,12 @@ description: Common code style and analysis rules for OpenRuntime monorepo - enf
 version: 0.1.2
 homepage: https://github.com/open-runtime/aot_monorepo
 repository: https://github.com/open-runtime/aot_monorepo
-
 environment:
   sdk: ^3.9.0
-
 dependencies:
-  lint_hard: ^4.0.0
-  custom_lint: ^0.8.0
-  custom_lint_builder: ^0.8.0
+  lint_hard: ^6.0.0
   analyzer: ^8.0.0
 
+dev_dependencies:
+  custom_lint: ^0.8.0
+  custom_lint_builder: ^0.8.0
