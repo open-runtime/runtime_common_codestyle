@@ -1,4 +1,7 @@
-import 'package:analyzer/dart/ast/ast.dart' show FunctionExpression, SimpleFormalParameter;
+import 'package:analyzer/dart/ast/ast.dart'
+    show AstNode, FunctionExpression, SimpleFormalParameter, VariableDeclaration;
+import 'package:analyzer/dart/element/element.dart' show VariableElement;
+import 'package:analyzer/dart/element/type.dart' show FunctionType;
 import 'package:analyzer/error/listener.dart' show DiagnosticReporter;
 import 'package:custom_lint_builder/custom_lint_builder.dart'
     show CustomLintContext, CustomLintResolver, DartLintRule, LintCode;
@@ -8,6 +11,8 @@ import 'package:custom_lint_builder/custom_lint_builder.dart'
 /// This rule enforces strong typing by requiring explicit type annotations
 /// on all function expression (closure) parameters, ensuring code clarity
 /// and type safety.
+/// Exception: Skips function expressions assigned to function-typed variables,
+/// as the type is already explicit in the variable declaration.
 class RequireClosureParameterTypesLint extends DartLintRule {
   const RequireClosureParameterTypesLint() : super(code: _code);
 
@@ -22,6 +27,11 @@ class RequireClosureParameterTypesLint extends DartLintRule {
   void run(CustomLintResolver resolver, DiagnosticReporter reporter, CustomLintContext context) {
     // Check function expressions (closures)
     context.registry.addFunctionExpression((node) {
+      // Skip if this function expression is assigned to a function-typed variable
+      if (_isAssignedToFunctionTypedVariable(node)) {
+        return;
+      }
+
       final parameters = node.parameters?.parameters ?? [];
       for (final parameter in parameters) {
         if (parameter is SimpleFormalParameter) {
@@ -39,6 +49,11 @@ class RequireClosureParameterTypesLint extends DartLintRule {
       // Check arguments that are function expressions
       for (final argument in node.argumentList.arguments) {
         if (argument is FunctionExpression) {
+          // Skip if this function expression is assigned to a function-typed variable
+          if (_isAssignedToFunctionTypedVariable(argument)) {
+            continue;
+          }
+
           final parameters = argument.parameters?.parameters ?? [];
           for (final parameter in parameters) {
             if (parameter is SimpleFormalParameter) {
@@ -50,5 +65,27 @@ class RequireClosureParameterTypesLint extends DartLintRule {
         }
       }
     });
+  }
+
+  /// Checks if a function expression is assigned to a function-typed variable
+  bool _isAssignedToFunctionTypedVariable(FunctionExpression node) {
+    // Traverse up the AST to find if this is an initializer of a VariableDeclaration
+    AstNode? current = node.parent;
+    while (current != null) {
+      // Check if this is a VariableDeclaration with a function-typed variable
+      if (current is VariableDeclaration) {
+        final fragment = current.declaredFragment;
+        final element = fragment?.element;
+        if (element is VariableElement) {
+          final type = element.type;
+          // Check if the variable type is a function type
+          if (type is FunctionType) {
+            return true;
+          }
+        }
+      }
+      current = current.parent;
+    }
+    return false;
   }
 }

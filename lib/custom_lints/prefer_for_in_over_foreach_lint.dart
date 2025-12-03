@@ -48,11 +48,7 @@ class PreferForInOverForEachLint extends DartLintRule {
       // Report with enhanced message
       reporter.atNode(
         node,
-        LintCode(
-          name: _code.name,
-          problemMessage: _code.problemMessage,
-          correctionMessage: refactoringSuggestion,
-        ),
+        LintCode(name: _code.name, problemMessage: _code.problemMessage, correctionMessage: refactoringSuggestion),
       );
     });
   }
@@ -105,5 +101,3 @@ class PreferForInOverForEachLint extends DartLintRule {
     return 'Use for-in loop: for (final $paramName in list) { /* your code */ }';
   }
 }
-
-
