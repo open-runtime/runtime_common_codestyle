@@ -1,19 +1,23 @@
 include: package:lint_hard/all.yaml
 
 analyzer:
+  plugins:
+    - custom_lint
+
   language:
-    # Strong typing - enforce explicit types (as warnings, not errors)
-    # These help catch type safety issues but don't block builds
-    # Set to 'error' once codebase is migrated to fix dynamic type issues
-    strict-casts: warning
-    strict-inference: warning
-    strict-raw-types: warning
+    # Strong typing - enforce explicit types
+    # These help catch type safety issues
+    # Severity is configured as warnings in analyzer.errors section below
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
 
   errors:
     # Allow explicit types (strong typing preference - we want verbose types)
     omit_local_variable_types: ignore
 
-    # Allow long lines (120 char limit enforced by formatter, not analyzer)
+    # Allow long lines (120 char limit enforced by formatter with --line-length=120, not analyzer)
+    # The analyzer rule checks for 80 chars, but we use 120 chars in our formatter
     lines_longer_than_80_chars: ignore
 
     # Allow dynamic calls (needed for some runtime code)
@@ -32,13 +36,41 @@ analyzer:
     # Allow async file IO (sometimes needed for better performance)
     avoid_slow_async_io: ignore
 
-    # Allow print statements (scripts folder is excluded, but allow elsewhere too)
+    # Allow print statements everywhere
     avoid_print: ignore
 
+    # Allow type annotations on closure parameters (strong typing preference)
+    avoid_types_on_closure_parameters: ignore
+
+    # Allow camel_case type names (common in FFI for C types like mode_t)
+    camel_case_types: ignore
+
+    # Allow comment references that may not be visible in scope (documentation purposes)
+    comment_references: ignore
+
     # Allow throw statements wrapped in parentheses (used as expressions in logical operations)
-    # Example: project is String || (throw Exception('message'));
+    # Example: value ?? (throw Exception('message'));
     # See: https://dart.dev/diagnostics/unnecessary_statements
     unnecessary_statements: ignore
+
+    # Configure strict typing rules as warnings (not errors) to avoid blocking builds
+    # These will show as warnings but won't fail the build
+    strict-casts: warning
+    strict-inference: warning
+    strict-raw-types: warning
+
+    # Unused variables are errors (not warnings) to catch unfinished implementations
+    # Custom message for agents and humans:
+    # "This may be an unfinished implementation given it is unused and may indicate
+    # that you wanted to do something with it but got side tracked. Study this variable
+    # and its surrounding context to either finish the implementation and use it, or
+    # remove it if it is truly unused and leave a comment about why it was okay to
+    # remove it in its place and why it might have been there in the first place."
+    unused_local_variable: error
+    unused_element: error
+    unused_field: error
+    unused_import: error
+    unused_shown_name: error
 
     # Allow variable shadowing with _ and __ prefixes
     # This is a documented convention, not enforced by analyzer
@@ -60,7 +92,7 @@ analyzer:
     - "**/example/**"
     - "**/test_reflectable/**"
 
-    # Scripts (allow print statements and async IO)
+    # Scripts folder (excluded from analysis)
     - "**/scripts/**"
 
     # External dependencies
@@ -71,7 +103,8 @@ analyzer:
 
 linter:
   rules:
-    # Enforce trailing commas in function calls and declarations
+    # Enforce required named parameters to be positioned before optional named parameters
+    # in function and method declarations
     always_put_required_named_parameters_first: true
 
     # Allow single-line control flow statements without braces
@@ -89,6 +122,10 @@ linter:
     # Allow dependencies to not be sorted alphabetically in pubspec.yaml
     # We organize dependencies by category (direct, git, local) rather than alphabetically
     sort_pub_dependencies: false
+
+    # Allow classes with only static members (common in FFI and utility classes)
+    # Example: class MODE_T_PERMISSIONS { static int x = 1; ... }
+    avoid_classes_with_only_static_members: false
 
     # All other rules from lint_hard/all.yaml are included above
 
