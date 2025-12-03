@@ -46,8 +46,7 @@
         },
         {
             "type": "chore",
-            "section": "Miscellaneous",
-            "hidden": true
+            "section": "Miscellaneous"
         }
     ]
 }
