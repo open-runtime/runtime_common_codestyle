@@ -1,0 +1,22 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "lint_hard",
+      "rootUri": "file:///Users/tsavoknott/.pub-cache/hosted/pub.dev/lint_hard-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "runtime_common_codestyle",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    }
+  ],
+  "generator": "pub",
+  "generatorVersion": "3.10.1",
+  "flutterRoot": "file:///Users/tsavoknott/Development/SDKs/arm64/flutter-sdk-3.38.3",
+  "flutterVersion": "3.38.3",
+  "pubCache": "file:///Users/tsavoknott/.pub-cache"
+}

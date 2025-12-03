@@ -1,0 +1,60 @@
+include: package:lint_hard/all.yaml
+
+analyzer:
+  language:
+    # Strong typing - enforce explicit types
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  errors:
+    # Allow explicit types (strong typing preference - we want verbose types)
+    omit_local_variable_types: ignore
+
+    # Allow long lines (120 char limit enforced by formatter, not analyzer)
+    lines_longer_than_80_chars: ignore
+
+    # Allow dynamic calls (needed for some runtime code)
+    avoid_dynamic_calls: ignore
+
+    # Allow SCREAMING_SNAKE_CASE for constants, enum values, static final fields
+    constant_identifier_names: ignore
+
+    # Allow PascalCase top-level declarations and snake_case functions
+    # Examples:
+    #   - Top-level: final ModuleAssets TesseractInferenceAssets = ...
+    #   - Functions: String get_standardized_color(String name) { ... }
+    non_constant_identifier_names: ignore
+
+    # Allow variable shadowing with _ and __ prefixes
+    # This is a documented convention, not enforced by analyzer
+    # _variable for one level of shadowing
+    # __variable for two levels of shadowing
+
+  exclude:
+    # Generated files
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
+    - "**/*.pb.dart"
+    - "**/*.pbenum.dart"
+    - "**/*.mocks.dart"
+    - "**/generated_plugin_registrant.dart"
+
+    # Examples and tests
+    - "**/example/**"
+    - "**/test_reflectable/**"
+
+    # External dependencies
+    - "**/ssg/**"
+    - "**/versioning/**"
+    - "**/grpc/example/**"
+    - "**/tree_sitter/**"
+
+linter:
+  rules:
+    # Enforce trailing commas in function calls and declarations
+    always_put_required_named_parameters_first: true
+
+    # All other rules from lint_hard/all.yaml are included above
+

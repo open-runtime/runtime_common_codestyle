@@ -1,0 +1,21 @@
+{
+  "roots": [
+    "runtime_common_codestyle"
+  ],
+  "packages": [
+    {
+      "name": "runtime_common_codestyle",
+      "version": "0.1.0",
+      "dependencies": [
+        "lint_hard"
+      ],
+      "devDependencies": []
+    },
+    {
+      "name": "lint_hard",
+      "version": "4.0.0",
+      "dependencies": []
+    }
+  ],
+  "configVersion": 1
+}
