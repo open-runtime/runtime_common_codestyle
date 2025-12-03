@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.3...v0.1.4) (2025-12-03)
+
+
+### Miscellaneous
+
+* auto-release runtime_common_codestyle ([#10](https://github.com/open-runtime/runtime_common_codestyle/issues/10)) ([96c493f](https://github.com/open-runtime/runtime_common_codestyle/commit/96c493fd46f302ae562274bdd352787efe2d62d0))
+* **runtime_common_codestyle:** add .gitignore and remove generated files ([3a80c4b](https://github.com/open-runtime/runtime_common_codestyle/commit/3a80c4bf0f7e8134e72a17f7bbe5aa1cbb89ec2a))
+
 ## [0.1.3](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.2...v0.1.3) (2025-12-03)
 
 
