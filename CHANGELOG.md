@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.5...v0.1.6) (2025-12-03)
+
+
+### Miscellaneous
+
+* update pubspec.yaml version to 0.1.5 ([f8229cd](https://github.com/open-runtime/runtime_common_codestyle/commit/f8229cd8ba1e6e175106347dd855af3f15c3293c))
+
 ## [0.1.5](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.4...v0.1.5) (2025-12-03)
 
 
