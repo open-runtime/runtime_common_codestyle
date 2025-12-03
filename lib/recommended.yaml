@@ -46,6 +46,19 @@ analyzer:
     strict-inference: warning
     strict-raw-types: warning
 
+    # Unused variables are errors (not warnings) to catch unfinished implementations
+    # Custom message for agents and humans:
+    # "This may be an unfinished implementation given it is unused and may indicate
+    # that you wanted to do something with it but got side tracked. Study this variable
+    # and its surrounding context to either finish the implementation and use it, or
+    # remove it if it is truly unused and leave a comment about why it was okay to
+    # remove it in its place and why it might have been there in the first place."
+    unused_local_variable: error
+    unused_element: error
+    unused_field: error
+    unused_import: error
+    unused_shown_name: error
+
     # Allow variable shadowing with _ and __ prefixes
     # This is a documented convention, not enforced by analyzer
     # _variable for one level of shadowing
