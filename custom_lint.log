@@ -1,491 +1,98 @@
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:31:25.545970 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:31:25.545970     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:31:25.545970                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:31:25.545970
+[custom_lint] 2025-12-02T20:31:25.545970
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:32:24.677156 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:32:24.677156     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:32:24.677156                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:32:24.677156
+[custom_lint] 2025-12-02T20:32:24.677156
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:32:52.736185 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:32:52.736185     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:32:52.736185                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:32:52.736185
+[custom_lint] 2025-12-02T20:32:52.736185
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:33:13.786617 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:33:13.786617     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:33:13.786617                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:33:13.786617
+[custom_lint] 2025-12-02T20:33:13.786617
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:33:32.025604 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:33:32.025604     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:33:32.025604                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:33:32.025604
+[custom_lint] 2025-12-02T20:33:32.025604
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:34:10.169795 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:34:10.169795     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:34:10.169795                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:34:10.169795
+[custom_lint] 2025-12-02T20:34:10.169795
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 
-The request analysis.updateContent failed with the following error:
+[custom_lint] 2025-12-02T20:34:24.547498 lib/custom_lint_client.dart:16:59: Error: Undefined name 'createPlugin'.
+[custom_lint] 2025-12-02T20:34:24.547498     {'runtime_common_codestyle': runtime_common_codestyle.createPlugin,
+[custom_lint] 2025-12-02T20:34:24.547498                                                           ^^^^^^^^^^^^
+[custom_lint] 2025-12-02T20:34:24.547498
+[custom_lint] 2025-12-02T20:34:24.547498
+Failed to start pluginsThe request analysis.setContextRoots failed with the following error:
 RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
+Bad state: Failed to start the plugins.
 at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
+#0      SocketCustomLintServerToClientChannel._checkInitializationFail.<anonymous closure> (package:custom_lint/src/v2/server_to_client_channel.dart:223)
 <asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.setContextRoots failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-Exception: Failed to run "pub get" in the client project:
-Resolving dependencies...
-
-Error on line 20, column 1 of /Users/tsavoknott/Development/GitHub/pieces-app/aot_monorepo/packages/external_dependencies/system_info/pubspec.yaml: Duplicate mapping key.
-   ╷
-20 │ runtime_common_codestyle:
-   │ ^^^^^^^^^^^^^^^^^^^^^^^^
-   ╵
-
-at:
-#0      CustomLintWorkspace.runPubGet (package:custom_lint/src/workspace.dart:774)
-<asynchronous suspension>
-#1      CustomLintWorkspace.resolvePluginHost (package:custom_lint/src/workspace.dart:757)
-<asynchronous suspension>
-#2      SocketCustomLintServerToClientChannel._startProcess (package:custom_lint/src/v2/server_to_client_channel.dart:151)
-<asynchronous suspension>
-#3      SocketCustomLintServerToClientChannel.init (package:custom_lint/src/v2/server_to_client_channel.dart:111)
-<asynchronous suspension>
-#4      CustomLintServer._maybeSpawnCustomLintPlugin (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:396)
-<asynchronous suspension>
-#5      CustomLintServer._handleAnalysisSetContextRoots.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:343)
-<asynchronous suspension>
-#6      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#7      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
-<asynchronous suspension>
-
-The request analysis.updateContent failed with the following error:
-RequestErrorCode.PLUGIN_ERROR
-A request threw the exception:Invalid overlay change: no content to change
-null
-at:
-#0      SocketCustomLintServerToClientChannel.sendCustomLintRequest (package:custom_lint/src/v2/server_to_client_channel.dart:273)
-<asynchronous suspension>
-#1      SocketCustomLintServerToClientChannel.sendAnalyzerPluginRequest (package:custom_lint/src/v2/server_to_client_channel.dart:234)
-<asynchronous suspension>
-#2      CustomLintServer._handleRequest.<anonymous closure>.<anonymous closure> (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:192)
-<asynchronous suspension>
-#3      PendingOperation.run (package:custom_lint/src/async_operation.dart:22)
-<asynchronous suspension>
-#4      CustomLintServer._handleRequest (package:custom_lint/src/v2/custom_lint_analyzer_plugin.dart:175)
+#1      Future.any.onValue (dart:async/future.dart:637)
 <asynchronous suspension>
 

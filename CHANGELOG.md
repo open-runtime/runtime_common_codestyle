@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.1...v0.1.2) (2025-12-03)
+
+
+### Bug Fixes
+
+* address PR review comments ([#3](https://github.com/open-runtime/runtime_common_codestyle/issues/3)) ([ede760f](https://github.com/open-runtime/runtime_common_codestyle/commit/ede760f91f92ec58e4cd25e8fbe8e9fde4ec0d2e))
+
 ## [0.1.1](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.0...v0.1.1) (2025-12-03)
 
 
