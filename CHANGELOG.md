@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.3](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.2...v0.1.3) (2025-12-03)
+
+
+### Features
+
+* **runtime_common_codestyle:** add unused element lint and improve closure parameter type detection ([9ba4faf](https://github.com/open-runtime/runtime_common_codestyle/commit/9ba4faff56add6c700e452f051669782eeeefa53))
+
+
+### Bug Fixes
+
+* resolve merge conflict in .dart_tool/package_graph.json ([939d6e5](https://github.com/open-runtime/runtime_common_codestyle/commit/939d6e521542f0163984668a4fdd5f6bf32680ed))
+* resolve merge conflicts with main ([191ed38](https://github.com/open-runtime/runtime_common_codestyle/commit/191ed38e2edb54eca534aae4e8a03d01e81e51c6))
+* **runtime_common_codestyle:** add missing protobuf file exclusions and remove trailing whitespace ([0234d62](https://github.com/open-runtime/runtime_common_codestyle/commit/0234d621c89608e286abcf17111d663cbaec8e12))
+
 ## [0.1.2](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.1...v0.1.2) (2025-12-03)
 
 

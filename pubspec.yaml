@@ -1,6 +1,6 @@
 name: runtime_common_codestyle
 description: Common code style and analysis rules for OpenRuntime monorepo - enforces trailing commas, strong typing, and custom naming conventions
-version: 0.1.2
+version: 0.1.3
 homepage: https://github.com/open-runtime/aot_monorepo
 repository: https://github.com/open-runtime/aot_monorepo
 
