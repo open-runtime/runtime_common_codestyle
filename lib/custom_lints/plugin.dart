@@ -11,10 +11,10 @@ PluginBase createPlugin() => _RuntimeCommonCodestylePlugin();
 class _RuntimeCommonCodestylePlugin extends PluginBase {
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
-        const UnusedVariableLint(),
-        const RequireClosureParameterTypesLint(),
-        const RequireShowHideInExportsLint(),
-        const RequireExplicitTypeAnnotationsLint(),
-        const PreferForInOverForEachLint(),
-      ];
+    const UnusedVariableLint(),
+    const RequireClosureParameterTypesLint(),
+    const RequireShowHideInExportsLint(),
+    const RequireExplicitTypeAnnotationsLint(),
+    const PreferForInOverForEachLint(),
+  ];
 }
