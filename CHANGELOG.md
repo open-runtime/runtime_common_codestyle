@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.4...v0.1.5) (2025-12-03)
+
+
+### Miscellaneous
+
+* auto-release runtime_common_codestyle ([66d077e](https://github.com/open-runtime/runtime_common_codestyle/commit/66d077e6c16b9b5dba872c3059d5067829b4026f))
+* **runtime_common_codestyle:** upgrade lint_hard to ^6.0.0 and move custom_lint packages to dev_dependencies ([#14](https://github.com/open-runtime/runtime_common_codestyle/issues/14)) ([7f46fbe](https://github.com/open-runtime/runtime_common_codestyle/commit/7f46fbed5fe6393f43c719083340e7ff5729121e))
+
 ## [0.1.4](https://github.com/open-runtime/runtime_common_codestyle/compare/v0.1.3...v0.1.4) (2025-12-03)
 
 
