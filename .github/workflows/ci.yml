@@ -1,16 +1,3 @@
-# =============================================================================
-# CI Workflow for open-runtime/aot_monorepo (runtime_common_codestyle package)
-# =============================================================================
-# Runs on:
-#   - Push to main
-#   - Pull requests to main
-#
-# Steps:
-#   1. Checkout
-#   2. Analyze code
-#   3. Format code (commit if changed)
-# =============================================================================
-
 name: CI
 
 on:
@@ -18,74 +5,79 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:
 
-# Cancel in-progress runs when new commits are pushed
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
-  # =============================================================================
-  # Analyze and Format
-  # =============================================================================
-  analyze:
-    name: 🧹 Analyze & Format
+  pre-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.bot_check.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Check for release bot commit
+        id: bot_check
+        run: |
+          AUTHOR=$(git log -1 --format='%an')
+          MSG=$(git log -1 --format='%s')
+          echo "Commit author: $AUTHOR"
+          echo "Commit subject: $MSG"
+          if [[ "$AUTHOR" == "github-actions[bot]" ]] || [[ "$MSG" == *"[skip ci]"* ]]; then
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Release bot commit detected — skipping CI."
+          else
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  analyze-and-test:
+    needs: pre-check
+    if: needs.pre-check.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout source code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
         with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
-      - name: 🎯 Install Dart SDK
-        uses: dart-lang/setup-dart@v1
+      - name: Configure Git for HTTPS with Token
+        shell: bash
+        run: |
+          TOKEN="${{ secrets.TSAVO_AT_PIECES_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}"
+          git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "git@github.com:"
+          git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global url."https://x-access-token:${TOKEN}@github.com/open-runtime/".insteadOf "git@github.com:open-runtime/"
+          git config --global url."https://x-access-token:${TOKEN}@github.com/pieces-app/".insteadOf "git@github.com:pieces-app/"
+
+      - name: Skip LFS for dependency clones
+        run: git lfs install --skip-smudge
+
+      - uses: dart-lang/setup-dart@v1.7.1
         with:
-          sdk: stable
+          sdk: "3.9.2"
 
-      - name: 📋 Report version
-        run: dart --version
+      - name: Cache Dart pub dependencies
+        uses: actions/cache@v5.0.3
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-dart-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: ${{ runner.os }}-dart-pub-
 
-      - name: 📚 Install dependencies
-        run: dart pub get
+      - run: dart pub get
 
-      - name: 🧹 Check formatting
-        id: format_check
-        run: |
-          # Check if files need formatting (line length 120 matches repo conventions)
-          if ! dart format --line-length=120 --output=none --set-exit-if-changed .; then
-            echo "needs_format=true" >> $GITHUB_OUTPUT
-          else
-            echo "needs_format=false" >> $GITHUB_OUTPUT
-          fi
+      - name: Cache Dart analysis
+        uses: actions/cache@v5.0.3
+        with:
+          path: ~/.dartServer
+          key: ${{ runner.os }}-dart-analysis-${{ hashFiles('**/*.dart', '**/pubspec.yaml') }}
+          restore-keys: ${{ runner.os }}-dart-analysis-
 
-      - name: 📝 Format and commit if needed
-        if: steps.format_check.outputs.needs_format == 'true' && github.event_name == 'push'
-        run: |
-          # Format all Dart files
-          dart format --line-length=120 .
-          
-          # Configure git
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # Check if there are changes
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "style: format code with dart format --line-length=120"
-            git push
-            echo "✅ Formatted code committed"
-          else
-            echo "✅ No formatting changes needed"
-          fi
+      - name: Analyze
+        run: dart run runtime_ci_tooling:manage_cicd analyze
 
-      - name: 🔍 Analyze code
-        run: |
-          # Report analysis issues but don't fail on warnings (review them)
-          dart analyze . || echo "⚠️ Analysis warnings found - review above"
-
+      - name: Test
+        run: dart run runtime_ci_tooling:manage_cicd test
