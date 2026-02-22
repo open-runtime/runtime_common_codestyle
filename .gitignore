@@ -18,3 +18,5 @@ custom_lint.log
 # OS files
 .DS_Store
 Thumbs.db
+# Runtime CI audit trails (local only)
+.runtime_ci/runs/
