@@ -1,0 +1,79 @@
+{
+  "command": "merged-audit",
+  "started_at": "2026-02-22T03:21:07.883080",
+  "merged_from": [
+    {
+      "artifact": "cicd-audit-explore",
+      "command": "explore",
+      "args": [],
+      "started_at": "2026-02-22T03:18:38.546559",
+      "pid": 2600,
+      "platform": "linux",
+      "dart_version": "3.9.2",
+      "repo_root": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle",
+      "run_dir": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle/.runtime_ci/runs/run_2026-02-22T03-18-38_2600",
+      "ci": true,
+      "completed_at": "2026-02-22T03:18:45.478894",
+      "duration_seconds": 6,
+      "exit_code": 1,
+      "artifacts": [
+        "explore/prompt.txt",
+        "meta.json"
+      ]
+    },
+    {
+      "artifact": "cicd-audit-release-notes",
+      "command": "release-notes",
+      "args": [],
+      "started_at": "2026-02-22T03:20:36.263722",
+      "pid": 2658,
+      "platform": "linux",
+      "dart_version": "3.9.2",
+      "repo_root": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle",
+      "run_dir": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle/.runtime_ci/runs/run_2026-02-22T03-20-36_2658",
+      "ci": true,
+      "completed_at": "2026-02-22T03:20:41.007528",
+      "duration_seconds": 4,
+      "exit_code": 1,
+      "artifacts": [
+        "release-notes/prompt.txt",
+        "meta.json"
+      ]
+    },
+    {
+      "artifact": "cicd-audit-compose",
+      "command": "documentation",
+      "args": [],
+      "started_at": "2026-02-22T03:19:42.710133",
+      "pid": 2749,
+      "platform": "linux",
+      "dart_version": "3.9.2",
+      "repo_root": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle",
+      "run_dir": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle/.runtime_ci/runs/run_2026-02-22T03-19-42_2749",
+      "ci": true
+    },
+    {
+      "artifact": "cicd-audit-compose",
+      "command": "compose",
+      "args": [],
+      "started_at": "2026-02-22T03:19:37.123111",
+      "pid": 2641,
+      "platform": "linux",
+      "dart_version": "3.9.2",
+      "repo_root": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle",
+      "run_dir": "/home/runner/work/runtime_common_codestyle/runtime_common_codestyle/.runtime_ci/runs/run_2026-02-22T03-19-37_2641",
+      "ci": true,
+      "completed_at": "2026-02-22T03:19:42.303063",
+      "duration_seconds": 5,
+      "artifacts": [
+        "compose/prompt.txt",
+        "meta.json"
+      ]
+    }
+  ],
+  "artifact_count": 4,
+  "total_files": 6,
+  "ci": true,
+  "platform": "linux",
+  "dart_version": "3.9.2"
+}
