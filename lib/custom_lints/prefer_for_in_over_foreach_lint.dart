@@ -48,7 +48,11 @@ class PreferForInOverForEachLint extends DartLintRule {
       // Report with enhanced message
       reporter.atNode(
         node,
-        LintCode(name: _code.name, problemMessage: _code.problemMessage, correctionMessage: refactoringSuggestion),
+        LintCode(
+          name: _code.lowerCaseName,
+          problemMessage: _code.problemMessage,
+          correctionMessage: refactoringSuggestion,
+        ),
       );
     });
   }
@@ -90,7 +94,7 @@ class PreferForInOverForEachLint extends DartLintRule {
           if (expr is MethodInvocation) {
             if (expr.methodName.name == 'add' && expr.argumentList.arguments.isNotEmpty) {
               final firstArg = expr.argumentList.arguments.first;
-              return 'Use collection for: final newList = [for (final $paramName in list) ${firstArg.toString()}];';
+              return 'Use collection for: final newList = [for (final $paramName in list) $firstArg];';
             }
           }
         }

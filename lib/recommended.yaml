@@ -53,11 +53,8 @@ analyzer:
     # See: https://dart.dev/diagnostics/unnecessary_statements
     unnecessary_statements: ignore
 
-    # Configure strict typing rules as warnings (not errors) to avoid blocking builds
-    # These will show as warnings but won't fail the build
-    strict-casts: warning
-    strict-inference: warning
-    strict-raw-types: warning
+    # Note: strict-casts, strict-inference, strict-raw-types are language options
+    # (configured above), not error codes - they cannot have severity overrides
 
     # Unused variables are errors (not warnings) to catch unfinished implementations
     # Custom message for agents and humans:

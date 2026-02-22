@@ -3,6 +3,7 @@ description: Common code style and analysis rules for OpenRuntime monorepo - enf
 version: 0.1.10
 homepage: https://github.com/open-runtime/runtime_common_codestyle
 repository: https://github.com/open-runtime/runtime_common_codestyle
+publish_to: none
 environment:
   sdk: ^3.9.0
 dependencies:
@@ -14,11 +15,16 @@ dependencies:
   analyzer: ^8.0.0
   lint_hard: ^6.0.0
 
+  custom_lint_builder:
+    git:
+      url: git@github.com:open-runtime/dart_custom_lint.git
+      path: packages/custom_lint_builder
+      tag_pattern: custom_lint_builder-v{{version}}
+    version: ^0.10.0
 dev_dependencies:
   custom_lint: ^0.8.1
-  custom_lint_builder: ^0.8.1
   runtime_ci_tooling:
     git:
       url: git@github.com:open-runtime/runtime_ci_tooling.git
       tag_pattern: v{{version}}
-    version: ^0.6.3
+    version: ^0.9.0
