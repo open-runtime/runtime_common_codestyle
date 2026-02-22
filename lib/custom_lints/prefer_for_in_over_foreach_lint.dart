@@ -1,3 +1,19 @@
+// prefer_for_in_over_foreach_lint.dart
+//
+// WHY THIS RULE EXISTS:
+//   forEach with function literals is idiomatic in some languages but has real
+//   downsides in Dart:
+//     - Creates an unnecessary closure allocation on every call site
+//     - Blocks control flow (you cannot `break`, `continue`, or `return` from
+//       an enclosing function inside a forEach callback)
+//     - Less readable than a for-in loop for multi-statement bodies
+//     - The Dart linter already has `avoid_function_literals_in_foreach_calls`
+//       but its message is generic — this rule provides context-aware suggestions
+//
+//   This rule is designed to be helpful for BOTH AI agents and human developers
+//   by diagnosing which refactoring pattern applies (tear-off vs for-in vs
+//   collection-for) based on static analysis of the closure body.
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/error/listener.dart' show DiagnosticReporter;
 import 'package:custom_lint_builder/custom_lint_builder.dart'
@@ -11,6 +27,9 @@ import 'package:custom_lint_builder/custom_lint_builder.dart'
 class PreferForInOverForEachLint extends DartLintRule {
   const PreferForInOverForEachLint() : super(code: _code);
 
+  // The _code constant defines the diagnostic shown to developers.
+  // The correctionMessage here is the generic fallback; _buildRefactoringSuggestion()
+  // generates a context-specific message at runtime that replaces this when possible.
   static const _code = LintCode(
     name: 'prefer_for_in_over_foreach',
     problemMessage:
@@ -21,31 +40,44 @@ class PreferForInOverForEachLint extends DartLintRule {
 
   @override
   void run(CustomLintResolver resolver, DiagnosticReporter reporter, CustomLintContext context) {
+    // Register a visitor for every MethodInvocation node in the AST.
+    // custom_lint calls this callback once per method call expression found in the file.
     context.registry.addMethodInvocation((node) {
       // Check if this is a forEach call
       if (node.methodName.name != 'forEach') return;
 
-      // Check if the target is an iterable (List, Set, Map, etc.)
+      // Require an explicit target (e.g., `list.forEach(...)` not just `forEach(...)`).
+      // A null target means it's a top-level function call, not an iterable method.
       final target = node.target;
       if (target == null) return;
 
-      // Check if forEach has arguments (function literal)
+      // forEach with no arguments is a no-op call — skip it.
       final arguments = node.argumentList.arguments;
       if (arguments.isEmpty) return;
 
-      // Check if the argument is a function expression (closure/literal)
+      // Only flag forEach when the argument is a function expression (closure/lambda).
+      // forEach with a tear-off (e.g., list.forEach(print)) is already idiomatic and
+      // should NOT be flagged — this rule only targets the anti-pattern.
       final firstArg = arguments.first;
       if (firstArg is! FunctionExpression) return;
 
-      // Get the function expression to analyze
+      // Extract the parameter name from the closure for use in the suggestion string.
+      // Falls back to 'item' if the closure has no parameters (unusual but possible).
       final functionExpr = firstArg;
       final parameters = functionExpr.parameters?.parameters ?? [];
-      final paramName = parameters.isNotEmpty ? parameters.first.toString().replaceAll(RegExp('[()]'), '') : 'item';
+      final paramName = parameters.isNotEmpty
+          ? parameters.first.toString().replaceAll(RegExp('[()]'), '')
+          : 'item';
 
-      // Build refactoring suggestion based on the function body
+      // Generate a context-specific suggestion by analyzing the closure body's AST.
+      // This gives the developer an actionable, copy-pasteable refactoring hint rather
+      // than just a generic "use for-in instead" message.
       final refactoringSuggestion = _buildRefactoringSuggestion(functionExpr, paramName);
 
-      // Report with enhanced message
+      // Report the diagnostic at the entire method invocation node (highlights
+      // both the method name and arguments for clear IDE underline placement).
+      // A new LintCode is constructed per-report to embed the dynamic suggestion
+      // in the correctionMessage shown in quick-fix panels.
       reporter.atNode(
         node,
         LintCode(name: _code.name, problemMessage: _code.problemMessage, correctionMessage: refactoringSuggestion),
@@ -53,14 +85,28 @@ class PreferForInOverForEachLint extends DartLintRule {
     });
   }
 
+  // _buildRefactoringSuggestion analyzes the AST of the function expression body
+  // and returns the most specific applicable refactoring pattern.
+  //
+  // Decision tree:
+  //   ExpressionFunctionBody (arrow: `(x) => expr`)
+  //     → MethodInvocation on the parameter → tear-off candidate
+  //     → FunctionExpressionInvocation with param as arg → tear-off candidate
+  //   BlockFunctionBody (braces: `(x) { ... }`)
+  //     → Single statement with .add(x) → collection-for candidate
+  //   Default → for-in loop suggestion
   String _buildRefactoringSuggestion(FunctionExpression functionExpr, String paramName) {
     final body = functionExpr.body;
 
-    // Check if it's a simple function call (tear-off candidate)
+    // Arrow function bodies (`(x) => expression`) are tear-off candidates
+    // when the expression is a simple method call on the parameter or a
+    // top-level function invocation with the parameter as the sole argument.
     if (body is ExpressionFunctionBody) {
       final expression = body.expression;
       if (expression is MethodInvocation) {
-        // Check if it's a simple method call on the parameter
+        // Pattern: `(item) => item.someMethod()` → suggest `list.forEach(item.someMethod)`
+        // Exclude toString/hashCode since those are rarely the intended operation and
+        // tear-offs on them would look confusing.
         final target = expression.target;
         if (target is SimpleIdentifier && target.name == paramName) {
           final methodName = expression.methodName.name;
@@ -68,11 +114,13 @@ class PreferForInOverForEachLint extends DartLintRule {
             return 'Use tear-off: list.forEach($methodName) instead of list.forEach(($paramName) => $paramName.$methodName())';
           }
         } else if (target == null && expression.methodName.name == 'print') {
-          // Check if it's a print statement
+          // Pattern: `(item) => print(item)` → suggest `list.forEach(print)`
+          // print is a top-level function so its target is null in the AST.
           return 'Use tear-off: list.forEach(print) instead of list.forEach(($paramName) => print($paramName))';
         }
       } else if (expression is FunctionExpressionInvocation) {
-        // Check if it's a function call with the parameter as argument
+        // Pattern: `(item) => myFunc(item)` → suggest `list.forEach(myFunc)`
+        // The function being invoked is a SimpleIdentifier (top-level function reference).
         final function = expression.function;
         if (function is SimpleIdentifier) {
           return 'Use tear-off: list.forEach(${function.name}) instead of list.forEach(($paramName) => ${function.name}($paramName))';
@@ -80,24 +128,26 @@ class PreferForInOverForEachLint extends DartLintRule {
       }
     }
 
-    // Check if it's building a new collection (collection for candidate)
+    // Block bodies with a single .add() call are collection-for candidates.
+    // Pattern: `(item) { newList.add(transform(item)); }` → suggest collection-for
     if (body is BlockFunctionBody) {
       final statements = body.block.statements;
-      // Look for patterns like: newList.add(item) or list.add(item)
       for (final stmt in statements) {
         if (stmt is ExpressionStatement) {
           final expr = stmt.expression;
           if (expr is MethodInvocation) {
             if (expr.methodName.name == 'add' && expr.argumentList.arguments.isNotEmpty) {
+              // Extract the argument passed to .add() for the suggestion string.
               final firstArg = expr.argumentList.arguments.first;
-              return 'Use collection for: final newList = [for (final $paramName in list) ${firstArg.toString()}];';
+              return 'Use collection for: final newList = [for (final $paramName in list) $firstArg];';
             }
           }
         }
       }
     }
 
-    // Default suggestion: for-in loop
+    // Default: suggest a for-in loop with placeholder body.
+    // This covers multi-statement closures and other patterns not matched above.
     return 'Use for-in loop: for (final $paramName in list) { /* your code */ }';
   }
 }

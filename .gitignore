@@ -15,8 +15,9 @@ pubspec.lock
 # Custom lint logs
 custom_lint.log
 
+# Runtime CI tooling runs
+.runtime_ci/runs/
+
 # OS files
 .DS_Store
 Thumbs.db
-# Runtime CI audit trails (local only)
-.runtime_ci/runs/

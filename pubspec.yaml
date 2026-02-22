@@ -5,6 +5,7 @@ homepage: https://github.com/open-runtime/runtime_common_codestyle
 repository: https://github.com/open-runtime/runtime_common_codestyle
 environment:
   sdk: ^3.9.0
+
 dependencies:
   # ==========================================================================
   #
@@ -17,8 +18,4 @@ dependencies:
 dev_dependencies:
   custom_lint: ^0.8.1
   custom_lint_builder: ^0.8.1
-  runtime_ci_tooling:
-    git:
-      url: git@github.com:open-runtime/runtime_ci_tooling.git
-      tag_pattern: v{{version}}
-    version: ^0.6.3
+  runtime_ci_tooling: ^0.8.0
