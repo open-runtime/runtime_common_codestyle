@@ -7,6 +7,7 @@ publish_to: none
 
 environment:
   sdk: ^3.9.0
+
 dependencies:
   # ==========================================================================
   #
@@ -28,4 +29,4 @@ dev_dependencies:
     git:
       url: git@github.com:open-runtime/runtime_ci_tooling.git
       tag_pattern: v{{version}}
-    version: ^0.10.0
+    version: ^0.11.0
