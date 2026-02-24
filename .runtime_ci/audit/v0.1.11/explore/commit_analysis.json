@@ -1,0 +1,57 @@
+{
+  "version": "0.1.11",
+  "previous_version": "v0.1.10",
+  "total_commits": 11,
+  "categories": {
+    "added": [
+      {
+        "description": "Added runtime_ci_tooling generated files including CLAUDE.md, SETUP.md, USAGE.md, .gemini commands, and GitHub workflows",
+        "pr": "#N/A",
+        "commits": [
+          "c4dadcf",
+          "f23f16e",
+          "9d09c0c"
+        ]
+      }
+    ],
+    "changed": [
+      {
+        "description": "Aligned custom_lint_builder constraints for workspace, moved it to dependencies as a git package from open-runtime fork, and added publish_to: none",
+        "pr": "#N/A",
+        "commits": [
+          "908d692",
+          "33ff022"
+        ]
+      },
+      {
+        "description": "Updated runtime_ci_tooling dependency to ^0.12.0 and regenerated CI workflow",
+        "pr": "#N/A",
+        "commits": [
+          "a25ce4d",
+          "b22d5ab",
+          "745180e"
+        ]
+      }
+    ],
+    "deprecated": [],
+    "removed": [],
+    "fixed": [
+      {
+        "description": "Avoid deprecated LintCode name getters to make lint code version-stable",
+        "pr": "#17",
+        "commits": [
+          "49f4f42",
+          "b5445be"
+        ]
+      },
+      {
+        "description": "Fixed all analyzer lint issues by removing invalid strict-casts/inference/raw-types language options from the errors section in recommended.yaml",
+        "pr": "#N/A",
+        "commits": [
+          "33ff022"
+        ]
+      }
+    ],
+    "security": []
+  }
+}

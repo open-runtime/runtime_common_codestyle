@@ -1,0 +1,18 @@
+{
+  "pull_requests": [
+    {
+      "number": 17,
+      "title": "fix: make lint code name version-stable",
+      "author": "Tsavo Knott",
+      "labels": [
+        "bug",
+        "fix"
+      ],
+      "summary": "Fixes compatibility with newer versions of analyzer/custom_lint_builder by using a static string _ruleName instead of the deprecated _code.name getter.",
+      "commits": [
+        "49f4f42",
+        "b5445be"
+      ]
+    }
+  ]
+}

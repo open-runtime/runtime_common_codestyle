@@ -1,0 +1,12 @@
+{
+  "version": "0.1.11",
+  "github_issues": [],
+  "sentry_issues": [],
+  "prs_referenced": [
+    {
+      "number": 17,
+      "title": "fix: make lint code name version-stable",
+      "author": "Tsavo Knott"
+    }
+  ]
+}
