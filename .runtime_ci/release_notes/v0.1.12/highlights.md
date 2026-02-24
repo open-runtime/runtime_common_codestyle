@@ -1,0 +1,3 @@
+- Added strict organization guards to the Gemini CLI triage script to prevent accidental operations on unauthorized or upstream repositories.
+- Updated all internal GitHub CLI commands to explicitly use the `--repo` flag to override implicit remote resolution.
+- Introduced a duplicate check system that reviews existing issue comments before posting new triage summaries.
