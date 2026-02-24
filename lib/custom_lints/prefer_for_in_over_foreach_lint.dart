@@ -11,8 +11,10 @@ import 'package:custom_lint_builder/custom_lint_builder.dart'
 class PreferForInOverForEachLint extends DartLintRule {
   const PreferForInOverForEachLint() : super(code: _code);
 
+  static const _ruleName = 'prefer_for_in_over_foreach';
+
   static const _code = LintCode(
-    name: 'prefer_for_in_over_foreach',
+    name: _ruleName,
     problemMessage:
         'Avoid using forEach with function literals. Prefer tear-offs, for-in loops, or collection for syntax. Function literals in forEach create unnecessary closures, add runtime overhead, and limit control flow (no break/continue).',
     correctionMessage:
@@ -48,11 +50,7 @@ class PreferForInOverForEachLint extends DartLintRule {
       // Report with enhanced message
       reporter.atNode(
         node,
-        LintCode(
-          name: _code.lowerCaseName,
-          problemMessage: _code.problemMessage,
-          correctionMessage: refactoringSuggestion,
-        ),
+        LintCode(name: _ruleName, problemMessage: _code.problemMessage, correctionMessage: refactoringSuggestion),
       );
     });
   }
