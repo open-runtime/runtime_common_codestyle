@@ -20,3 +20,6 @@ custom_lint.log
 Thumbs.db
 # Runtime CI audit trails (local only)
 .runtime_ci/runs/
+
+# Claude AI session data
+.claude/
